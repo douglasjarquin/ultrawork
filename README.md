@@ -14,14 +14,14 @@ This repository contains custom agent prompts that work together to handle the c
 
 ### Primary Agents
 
-- **Atlas** (`Atlas.agent.md`) - The ORCHESTRATOR
+- **Atlas** (`atlas.agent.md`) - The ORCHESTRATOR
   - **Model:** Claude Sonnet 4.5 (copilot)
   - Orchestrates the full development lifecycle
   - Delegates to specialized subagents for research, implementation, and review
   - Manages context conservation and parallel execution
   - Handles phase tracking and user approval gates
 
-- **Prometheus** (`Prometheus.agent.md`) - The AUTONOMOUS PLANNER
+- **Prometheus** (`prometheus.agent.md`) - The AUTONOMOUS PLANNER
   - **Model:** GPT-5.2 High (if reasoning set to high, check requirements block below)
   - Researches requirements and analyzes codebases
   - Writes comprehensive TDD-driven implementation plans
@@ -30,35 +30,35 @@ This repository contains custom agent prompts that work together to handle the c
 
 ### Specialized Subagents
 
-- **Oracle-subagent** (`Oracle-subagent.agent.md`) - THE RESEARCHER
+- **Oracle-subagent** (`oracle-subagent.agent.md`) - THE RESEARCHER
   - **Model:** GPT-5.2 (copilot)
   - Gathers comprehensive context about tasks
   - Can delegate to Explorer for large-scope research
   - Returns structured findings to parent agents
   - Supports parallel research across independent subsystems
 
-- **Sisyphus-subagent** (`Sisyphus-subagent.agent.md`) - THE IMPLEMENTER
+- **Sisyphus-subagent** (`sisyphus-subagent.agent.md`) - THE IMPLEMENTER
   - **Model:** Claude Sonnet 4.5 (copilot)
   - Executes implementation following strict TDD principles
   - Writes tests first, then minimal code to pass
   - Handles linting and formatting
   - Can be invoked in parallel for disjoint features
 
-- **Explorer-subagent** (`Explorer-subagent.agent.md`) - THE SCOUT
+- **Explorer-subagent** (`explorer-subagent.agent.md`) - THE SCOUT
   - **Model:** Gemini 3 Flash (Preview) (copilot)
   - Rapid file/usage discovery across codebases
   - Read-only exploration (no edits/commands)
   - Returns structured results with file lists and analysis
   - MANDATORY parallel search strategy (3-10 simultaneous searches)
 
-- **Code-Review-subagent** (`Code-Review-subagent.agent.md`) - THE REVIEWER
+- **Code-Review-subagent** (`code-review-subagent.agent.md`) - THE REVIEWER
   - **Model:** GPT-5.2 (copilot)
   - Reviews code for correctness, quality, and test coverage
   - Returns structured feedback (APPROVED/NEEDS_REVISION/FAILED)
   - Can be invoked in parallel for independent phases
   - Focus on blocking issues vs nice-to-haves
 
-- **Frontend-Engineer-subagent** (`Frontend-Engineer-subagent.agent.md`) - THE UI/UX SPECIALIST
+- **Frontend-Engineer-subagent** (`frontend-engineer-subagent.agent.md`) - THE UI/UX SPECIALIST
   - **Model:** Gemini 3 Pro (Preview) (copilot)
   - Implements user interfaces, styling, and responsive layouts
   - Expert in modern frontend frameworks and tooling

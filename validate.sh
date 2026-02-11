@@ -29,7 +29,7 @@ for FILE in $MD_FILES; do
     if grep -q "^---$" "$FILE"; then
         TEMP_YAML="$TEMP_DIR/$(basename $FILE .md).yaml"
         awk '/^---$/{flag=!flag; if(flag==0 && NR>1) exit; next} flag' "$FILE" > "$TEMP_YAML"
-        
+
         if [ -s "$TEMP_YAML" ]; then
             echo -n "Checking $FILE... "
             if yamllint -c .yamllint "$TEMP_YAML" 2>&1 | grep -v "^$TEMP_YAML$" > /dev/null; then

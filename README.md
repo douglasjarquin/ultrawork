@@ -471,6 +471,34 @@ Add an entry to the README's Specialized Subagents section describing when to us
 - **Documentation-Writer**: Generates comprehensive docs from code
 - **Migration-Expert**: Handles database migrations, version upgrades, refactoring
 
+## Development
+
+### YAML Validation
+
+This repository includes YAML frontmatter validation for all agent markdown files.
+
+**Validation runs automatically during install:**
+```bash
+./install.sh
+```
+
+The install script validates all YAML frontmatter before copying files. If validation fails, the installation is aborted and no files are copied.
+
+**Manual validation:**
+```bash
+./validate.sh
+```
+
+**Install yamllint (if needed):**
+```bash
+brew install yamllint
+```
+
+The validation uses `.yamllint` config with these rules:
+- Line length: 120 characters (warning)
+- Proper indentation and syntax
+- Consistent formatting
+
 ## License
 
 MIT License

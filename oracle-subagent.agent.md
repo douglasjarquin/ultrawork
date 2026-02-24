@@ -1,6 +1,7 @@
 ---
 description: Research context and return findings to parent agent
 tools: ['search', 'usages', 'problems', 'changes', 'testFailure', 'fetch', 'agent']
+model: gpt-5.2
 ---
 You are a PLANNING SUBAGENT called by a parent CONDUCTOR agent.
 

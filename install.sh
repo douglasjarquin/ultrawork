@@ -44,18 +44,18 @@ echo ""
 if [ -n "$REMOTE_HOST" ]; then
     # Remote installation via SSH
     echo -e "${YELLOW}Installing to remote host: $REMOTE_HOST${NC}"
-    
+
     # Create the agents directory on remote host
-    ssh "$REMOTE_HOST" "mkdir -p ~/.copilot/agents/"
-    
+    ssh -q "$REMOTE_HOST" "mkdir -p ~/.copilot/agents/"
+
     # Copy all agent files
     echo "Installing agents..."
-    scp -v *.agent.md "$REMOTE_HOST:~/.copilot/agents/"
-    
+    scp *.agent.md "$REMOTE_HOST:~/.copilot/agents/"
+
     # Copy shared configuration files
     echo "Installing shared configuration..."
-    scp -v AGENTS.md handoff-protocol.md "$REMOTE_HOST:~/.copilot/agents/"
-    
+    scp AGENTS.md handoff-protocol.md "$REMOTE_HOST:~/.copilot/agents/"
+
     echo ""
     echo -e "${GREEN}✓ Remote installation complete!${NC}"
     echo ""
@@ -69,16 +69,16 @@ else
     # Local installation
     # Create the agents directory if it doesn't exist
     mkdir -p ~/.copilot/agents/
-    
+
     # Copy all agent files
     echo "Installing agents..."
     cp -v *.agent.md ~/.copilot/agents/
-    
+
     # Copy shared configuration files
     echo "Installing shared configuration..."
     cp -v AGENTS.md ~/.copilot/agents/
     cp -v handoff-protocol.md ~/.copilot/agents/
-    
+
     echo ""
     echo -e "${GREEN}✓ Installation complete!${NC}"
     echo ""

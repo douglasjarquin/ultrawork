@@ -14,9 +14,7 @@ tools:
   - fetch
   - githubRepo
   - todos
----
-  read_only: false
-  can_web_research: true
+model: gpt-4.1
 ---
 You are a FRONTEND UI/UX ENGINEER SUBAGENT called by a parent CONDUCTOR agent (Atlas).
 

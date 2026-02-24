@@ -3,6 +3,7 @@ description: >-
   Explore the codebase to find relevant files, usages, dependencies,
   and context for a given research goal or problem statement.
 tools: ['search', 'usages', 'problems', 'changes', 'testFailure']
+model: gpt-5-mini
 ---
 You are an EXPLORATION SUBAGENT called by a parent CONDUCTOR agent.
 

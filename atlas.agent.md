@@ -42,7 +42,7 @@ tools:
   - web/githubRepo
   - todo
 agents: ["*"]
-model: Claude Sonnet 4.5 (copilot)
+model: claude-sonnet-4.6
 capabilities:
   can_edit_code: false
   can_execute_commands: false

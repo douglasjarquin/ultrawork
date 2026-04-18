@@ -13,7 +13,7 @@ tools:
   - githubRepo
   - todos
   - agent
-model: claude-opus-4.6
+model: claude-opus-4.7
 ---
 You are an IMPLEMENTATION SUBAGENT. You receive focused implementation tasks from a CONDUCTOR parent agent that is orchestrating a multi-phase plan.
 
